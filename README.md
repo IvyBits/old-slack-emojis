@@ -30,7 +30,7 @@ and install [this](https://userstyles.org/styles/155342/old-slack-emojis) style.
 Quick & dirty:
 
 ```shell
-curl -ssL https://old-slack-emojis.cf | sudo bash
+curl -sSL https://old-slack-emojis.cf | sudo bash
 ```
 
 Alternatively, you can download and run
