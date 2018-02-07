@@ -34,10 +34,10 @@ curl -sSL https://old-slack-emojis.cf | sudo bash
 ```
 
 Alternatively, you can download and run
-[the installation script](https://raw.githubusercontent.com/Xyene/old-slack-emojis/master/old-slack-emojis.sh) from this repository.
+[the installation script](https://raw.githubusercontent.com/IvyBits/old-slack-emojis/master/old-slack-emojis.sh) from this repository.
 
 #### Windows
-Download and run [the installation script](https://raw.githubusercontent.com/Xyene/old-slack-emojis/master/old-slack-emojis.bat)
+Download and run [the installation script](https://raw.githubusercontent.com/IvyBits/old-slack-emojis/master/old-slack-emojis.bat)
 from this repository.
 
 The script won't work with the Windows Store version of the Slack app. The Windows Store version is write-protected and can't be

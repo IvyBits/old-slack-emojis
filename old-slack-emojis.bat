@@ -127,7 +127,7 @@ IF NOT EXIST "%~1.osebak" (
 :: Inject loader code
 >>"%~1" (
 	ECHO.
-	ECHO.// ** old-slack-emojis ** https://github.com/Xyene/old-slack-emojis
+	ECHO.// ** old-slack-emojis ** https://github.com/IvyBits/old-slack-emojis
 	ECHO.var scriptPath = path.join(__dirname, 'old-slack-emojis.js'^).replace('app.asar', 'app.asar.unpacked'^);
 	ECHO.require('fs'^).readFile(scriptPath, 'utf8', (e, r^) =^> { if (e^) { throw e; } else { eval(r^); } }^);
 )
