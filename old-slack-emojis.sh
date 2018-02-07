@@ -100,7 +100,7 @@ fi
 
 cat <<EOF > $SLACK_DIR/old-slack-emojis.js
 var emojiStyle = document.createElement('style'^);
-emojiStyle.innerText = ".emoji-sizer[style*='sheet_google_64_indexed_256.png'] { background-image: url('https://github.com/Xyene/old-slack-emojis/raw/master/slack_2016_apple_sprite_64.png') !important; }";
+emojiStyle.innerText = ".emoji-sizer[style*='sheet_google_64_indexed_256.png'], .emoji[style*='sheet_google_64_indexed_256.png'] { background-image: url('https://github.com/IvyBits/old-slack-emojis/raw/master/slack_2016_apple_sprite_64.png') !important; }";
 document.head.appendChild(emojiStyle^);
 EOF
 
