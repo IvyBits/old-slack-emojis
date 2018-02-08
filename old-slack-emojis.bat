@@ -71,7 +71,7 @@ IF "%UNINSTALL%" == "-u" (
 
 >"%SLACK_DIR%\old-slack-emojis.js" (
     ECHO.var emojiStyle = document.createElement('style'^);
-    ECHO.emojiStyle.innerText = ".emoji-sizer[style*='sheet_google_64_indexed_256.png'], .emoji[style*='sheet_google_64_indexed_256.png'] { background-image: url('https://github.com/IvyBits/old-slack-emojis/raw/master/slack_2016_apple_sprite_64.png') !important; }";
+    ECHO.emojiStyle.innerText = ".emoji-sizer[style*='sheet_google_64_indexed_256.png'], .emoji[style*='sheet_google_64_indexed_256.png'] { background-image: url('https://old-slack-emojis.cf/cdn/slack_2016_apple_sprite_64.png') !important; }";
     ECHO.document.head.appendChild(emojiStyle^);
 )
 
