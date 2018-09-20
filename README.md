@@ -3,7 +3,9 @@
 Bring back old emojis to new Slack!
 
 ## What is this?
-In February 2018, Slack pushed a change making Google emojis used on all platforms, instead of the older Apple emojis.
+In February 2018, Slack pushed a change making Google emojis used on all platforms except macOS, instead of the older Apple emojis.
+
+On macOS, emojis have been instead switched to the newer iOS 10.2 style, instead of the original iOS 6 style.
 
 ### Before change
 
@@ -13,7 +15,7 @@ In February 2018, Slack pushed a change making Google emojis used on all platfor
 
 ![](https://i.imgur.com/46NPVv2.png)
 
-This patch reverses this change, and brings back the loveable Apple emojis to new Slack clients.
+This patch reverses this change, and brings back the loveable classic Apple emojis to new Slack clients.
 
 ## Installation
 Installation varies depending on if you're using the Slack webapp or desktop client. A patch for mobile app versions of Slack is not

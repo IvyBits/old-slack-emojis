@@ -71,7 +71,7 @@ IF "%UNINSTALL%" == "-u" (
 
 >"%SLACK_DIR%\old-slack-emojis.js" (
     ECHO.var emojiStyle = document.createElement('style'^);
-    ECHO.emojiStyle.innerText = ".emoji-outer { background-image: url('https://old-slack-emojis.cf/cdn/slack_2016_apple_sprite_64.png') !important; }";
+    ECHO.emojiStyle.innerText = ".emoji-outer, #msg_input .emoji[style*=_indexed_] { background-image: url('https://old-slack-emojis.cf/cdn/slack_2016_apple_sprite_64.png') !important; }";
     ECHO.document.head.appendChild(emojiStyle^);
 )
 
@@ -128,8 +128,10 @@ IF NOT EXIST "%~1.osebak" (
 >>"%~1" (
 	ECHO.
 	ECHO.// ** old-slack-emojis ** https://github.com/IvyBits/old-slack-emojis
-	ECHO.var scriptPath = path.join(__dirname, 'old-slack-emojis.js'^).replace('app.asar', 'app.asar.unpacked'^);
-	ECHO.require('fs'^).readFile(scriptPath, 'utf8', (e, r^) =^> { if (e^) { throw e; } else { eval(r^); } }^);
+	ECHO.if (window.location.href !== 'about:blank'^) {
+	ECHO.  const scriptPath = require('path'^).join(__dirname, 'old-slack-emojis.js'^).replace('app.asar', 'app.asar.unpacked'^);
+	ECHO.  require('fs'^).readFile(scriptPath, 'utf8', (e, r^) =^> { if (e^) { throw e; } else { eval(r^); } }^);
+	ECHO.}
 )
 
 EXIT /B 0

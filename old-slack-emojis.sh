@@ -100,7 +100,7 @@ fi
 
 cat <<EOF > $SLACK_DIR/old-slack-emojis.js
 var emojiStyle = document.createElement('style');
-emojiStyle.innerText = ".emoji-outer { background-image: url('https://old-slack-emojis.cf/cdn/slack_2016_apple_sprite_64.png') !important; }";
+emojiStyle.innerText = ".emoji-outer, #msg_input .emoji[style*=_indexed_] { background-image: url('https://old-slack-emojis.cf/cdn/slack_2016_apple_sprite_64.png') !important; }";
 document.head.appendChild(emojiStyle);
 EOF
 
@@ -123,8 +123,10 @@ inject_loader() {
 	# Inject loader code
 	echo "" >> $1
 	echo "// ** old-slack-emojis ** https://github.com/IvyBits/old-slack-emojis" >> $1
-	echo "var scriptPath = path.join(__dirname, 'old-slack-emojis.js').replace('app.asar', 'app.asar.unpacked');" >> $1
-	echo "require('fs').readFile(scriptPath, 'utf8', (e, r) => { if (e) { throw e; } else { eval(r); } });" >> $1
+	echo "if (window.location.href !== 'about:blank') {" >> $1
+	echo "  const scriptPath = require('path').join(__dirname, 'old-slack-emojis.js').replace('app.asar', 'app.asar.unpacked');" >> $1
+	echo "  require('fs').readFile(scriptPath, 'utf8', (e, r) => { if (e) { throw e; } else { eval(r); } });" >> $1
+	echo "}" >> $1
 }
 
 inject_loader $SLACK_DIR/ssb-interop.js
